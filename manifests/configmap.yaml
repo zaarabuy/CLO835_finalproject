@@ -5,7 +5,7 @@ metadata:
   namespace: final
 data:
   STUDENT_NAME: "Yubaraj Ghimire"
-  BG_IMAGE_URL: "s3://myprobuckets/mountain.jpg"
+  BG_IMAGE_URL: "s3://myprobuckets/mountain.jpeg"
   DBHOST: "mysql-service"
   DATABASE: "employees"
   DBPORT: "3306"
