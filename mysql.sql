@@ -13,6 +13,8 @@ INSERT INTO employee VALUES ('2','Alan','Williams','Empathy','alien');
 INSERT INTO employee VALUES ('3','Yubaraj','Ghimire','Student','scarborough');
 INSERT INTO employee VALUES ('4','Ashmita','Kayastha','Student','scarborough');
 INSERT INTO employee VALUES ('5','Pujan','Sherpa','Student','scarborough');
+INSERT INTO employee VALUES ('6','Ram','Sherpa','Student','scarborough');
+
 
 SELECT * FROM employee;
 
