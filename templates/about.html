@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello from Flask</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='background.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Avenir, sans-serif;
+            color: #e4e4e4;
+            text-align: center;
+            padding-top: 50px;
+        }
+
+        .output-container {
+            margin-top: 40px;
+        }
+
+        textarea {
+            margin-top: 20px;
+            width: 60%;
+            height: 200px;
+            font-size: 14px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome, {{ student_name }}!</h1>
+
+    <div class="output-container">
+        {% if name %}
+            <h1>Hello from {{ name }}!</h1>
+        {% else %}
+            <h1>Hello from CLO835!</h1>
+        {% endif %}
+
+        {% if contents %}
+            <textarea readonly>{{ contents }}</textarea>
+        {% endif %}
+    </div>
+</body>
+</html>

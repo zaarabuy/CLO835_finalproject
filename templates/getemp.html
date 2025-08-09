@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Get Employee Information</title>
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='background.jpg') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Avenir, sans-serif;
+            color: black;
+            text-align: center;
+        }
+
+        h1 {
+            color: DodgerBlue;
+        }
+
+        form {
+            margin-top: 30px;
+        }
+
+        input[type="number"] {
+            height: 25px;
+            font-size: 14pt;
+        }
+
+        button {
+            background: grey;
+            height: 45px;
+            width: 200px;
+            color: white;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Employee Information</h1>
+    <h1 class="text-center">Welcome, {{ student_name }}!</h1>
+
+    <form action="/fetchdata" autocomplete="on" method="POST">
+        <h2 style="color: grey">Enter Employee ID</h2>
+        Employee ID:<br>
+        <input type="number" name="emp_id" autofocus size="40"><br><br>
+
+        <button type="submit">FETCH INFO</button><br><br>
+    </form>
+</body>
+
+	<title>Get Employee Information</title>
+	<style>
+  body {
+    background-image: url("{{ url_for('static', filename='background.jpg') }}");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+</style>
+</head>
+
+</html>
+

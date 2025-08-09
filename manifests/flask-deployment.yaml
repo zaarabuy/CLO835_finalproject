@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-app
+  namespace: final
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flask
+  template:
+    metadata:
+      labels:
+        app: flask
+    spec:
+      serviceAccountName: clo835
+      containers:
+      - name: flask
+        image: 383268345080.dkr.ecr.us-east-1.amazonaws.com/flask-app:latest
+        ports:
+        - containerPort: 81
+        env:
+        - name: STUDENT_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: STUDENT_NAME
+        - name: BG_IMAGE_URL
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: BG_IMAGE_URL
+        - name: DBHOST
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: DBHOST
+        - name: DBUSER
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: MYSQL_USER
+        - name: DBPWD
+          valueFrom:
+            secretKeyRef:
+              name: db-secret
+              key: MYSQL_PASSWORD
+        - name: DATABASE
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: DATABASE
+        - name: DBPORT
+          valueFrom:
+            configMapKeyRef:
+              name: app-config
+              key: DBPORT
